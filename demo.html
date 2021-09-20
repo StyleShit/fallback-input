@@ -118,7 +118,7 @@
 
 &lt;script&gt;
     fallbackInput.addEventListener( 'keyup', ( e ) => {
-        console.log( e.target.fallback );
+        console.log( e.target.fallbackValue );
     } );
 &lt;/script&gt;
             </code></pre>
@@ -134,7 +134,7 @@
             const output = document.querySelector( '.output code' );
         
             document.querySelector( 'input' ).addEventListener( 'keyup', ( e ) => {
-                output.innerText = e.target.fallback || '...';
+                output.innerText = e.target.fallbackValue || '...';
             } );
         </script>
 

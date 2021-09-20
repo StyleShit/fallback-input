@@ -19,7 +19,7 @@ when a user forgets to change the typing language.
 
 <script>
     fallbackInput.addEventListener( 'keyup', ( e ) => {
-        console.log( e.target.fallback );
+        console.log( e.target.fallbackValue );
     } );
 </script>
 ```
@@ -31,6 +31,6 @@ when a user forgets to change the typing language.
 
 - The "most accurate" fallback value is available only after a `keyup` event.
 
-- Access the fallback value using `input.fallback` in your code.
+- Access the fallback value using `input.fallbackValue` in your code.
 
 - The fallback value might not always be accurate and this code doesn't cover all of the use-cases, but in a real-world scenario we've found it to be very useful and usable *as a fallback*.

@@ -8,7 +8,7 @@ class FallbackInput extends HTMLInputElement {
 	constructor() {
 		super();
 
-		this.fallback = '';
+		this.fallbackValue = '';
 	}
 
     /**
@@ -43,15 +43,15 @@ class FallbackInput extends HTMLInputElement {
 		}
 
 		// Reset fallback value if the input is empty or some chars were deleted.
-		if ( ! e.currentTarget.value || e.currentTarget.value.length < this.fallback.length ) {
-			this.fallback = '';
+		if ( ! e.currentTarget.value || e.currentTarget.value.length < this.fallbackValue.length ) {
+			this.fallbackValue = '';
 		}
 
 		const isLetter = ( e.keyCode >= 65 && e.keyCode <= 90 )
         const isSpace = ( 32 === e.keyCode );
 
 		if ( isLetter || isSpace ) {
-			this.fallback += String.fromCharCode( e.keyCode ).toLowerCase();
+			this.fallbackValue += String.fromCharCode( e.keyCode ).toLowerCase();
 		}
     }
 
