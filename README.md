@@ -34,3 +34,5 @@ when a user forgets to change the typing language.
 - Access the fallback value using `input.fallbackValue` in your code.
 
 - The fallback value might not always be accurate and this code doesn't cover all of the use-cases, but in a real-world scenario we've found it to be very useful and usable *as a fallback*.
+
+- Safari (WebKit) [won't implement this feature](https://bugs.webkit.org/show_bug.cgi?id=182671) so a [Polyfill](https://github.com/ungap/custom-elements) is required.
