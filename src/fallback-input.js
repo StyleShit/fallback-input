@@ -38,21 +38,21 @@ class FallbackInput extends HTMLInputElement {
      */
     onKeyUp( e ) {
         // Don't catch keyboard shortcuts.
-		if ( e.shiftKey || e.ctrlKey || e.altKey ) {
-			return;
-		}
+        if ( e.shiftKey || e.ctrlKey || e.altKey ) {
+            return;
+        }
 
-		// Reset fallback value if the input is empty or some chars were deleted.
-		if ( ! e.currentTarget.value || e.currentTarget.value.length < this.fallbackValue.length ) {
-			this.fallbackValue = '';
-		}
+        // Reset fallback value if the input is empty or some chars were deleted.
+        if ( ! e.currentTarget.value || e.currentTarget.value.length < this.fallbackValue.length ) {
+            this.fallbackValue = '';
+        }
 
-		const isLetter = ( e.keyCode >= 65 && e.keyCode <= 90 )
+        const isLetter = ( e.keyCode >= 65 && e.keyCode <= 90 )
         const isSpace = ( 32 === e.keyCode );
 
-		if ( isLetter || isSpace ) {
-			this.fallbackValue += String.fromCharCode( e.keyCode ).toLowerCase();
-		}
+        if ( isLetter || isSpace ) {
+            this.fallbackValue += String.fromCharCode( e.keyCode ).toLowerCase();
+        }
     }
 
 }
